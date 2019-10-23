@@ -4,16 +4,10 @@ import pprint
 
 pp = pprint.PrettyPrinter(indent=3)
 blockchain=Blockchain()
-transaction=[]
+transaction=Transaction("Anshul","Eva",10)
 
-block=Block(transaction,time(),0)
-blockchain.addBlock(block)
-
-block=Block(transaction,time(),1)
-blockchain.addBlock(block)
-
-block=Block(transaction,time(),2)
-blockchain.addBlock(block)
+blockchain.pendingTransactions.append(transaction)
+blockchain.minePendingTransactions("X")
 
 pp.pprint(blockchain.chainJSONencode())
 print("LENGTH:",len(blockchain.chain))
