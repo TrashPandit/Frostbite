@@ -82,8 +82,9 @@ class Block(object):
 		self.transactions = transactions
 		self.time = time	# Time of transaction
 		self.prev = ''	# Previous Block Hash
+		self.nonce = 0	
 		self.hash = self.calculateHash()	# Current Block Hash
-		self.nonce = 0	# Cryptographic Nonce: Value that varies with time
+		# Cryptographic Nonce: Value that varies with time
 	
 	def mineBlock(self,difficulty):
 		arr=[]
